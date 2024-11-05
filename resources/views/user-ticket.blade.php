@@ -407,7 +407,7 @@
     </svg>
     Profile settings
 </a>
-<a href="https://xilancer.xgenious.com/client/profile/logout" class="navbar-author-wrapper-list-item">
+<a href="/logout" class="navbar-author-wrapper-list-item">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
          xmlns="http://www.w3.org/2000/svg">
         <path
@@ -702,7 +702,7 @@
         </a>
     </li>
     <li class="profile-settings-menu-item">
-        <a href="https://xilancer.xgenious.com/client/profile/logout" class="profile-settings-menu-item-link">
+        <a href="/logout" class="profile-settings-menu-item-link">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <path

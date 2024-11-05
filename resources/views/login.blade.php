@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="y2GKVXEiaQRTK7IiUYyPNyHl7KHcqfx9iaAYJlt3">
+    {{-- <meta name="csrf-token" content="y2GKVXEiaQRTK7IiUYyPNyHl7KHcqfx9iaAYJlt3"> --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- favicon -->
                 <link rel="icon" href="https://xilancer.xgenious.com/assets/uploads/media-uploader/favicon1680407178.png" sizes="40x40" type="icon/png">
         <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -250,7 +251,7 @@
         </a>
         <div class="navbar-author-wrapper">
             <div class="navbar-author-wrapper-list">
-                <a href="/freelancelog" class="navbar-author-wrapper-list-item">
+                {{-- <a href="/freelancelog" class="navbar-author-wrapper-list-item">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7 10.75H5C2.58 10.75 1.25 9.42 1.25 7V5C1.25 2.58 2.58 1.25 5 1.25H7C9.42 1.25 10.75 2.58 10.75 5V7C10.75 9.42 9.42 10.75 7 10.75ZM5 2.75C3.42 2.75 2.75 3.42 2.75 5V7C2.75 8.58 3.42 9.25 5 9.25H7C8.58 9.25 9.25 8.58 9.25 7V5C9.25 3.42 8.58 2.75 7 2.75H5Z" fill="#667085"/>
 <path d="M19 10.75H17C14.58 10.75 13.25 9.42 13.25 7V5C13.25 2.58 14.58 1.25 17 1.25H19C21.42 1.25 22.75 2.58 22.75 5V7C22.75 9.42 21.42 10.75 19 10.75ZM17 2.75C15.42 2.75 14.75 3.42 14.75 5V7C14.75 8.58 15.42 9.25 17 9.25H19C20.58 9.25 21.25 8.58 21.25 7V5C21.25 3.42 20.58 2.75 19 2.75H17Z" fill="#667085"/>
@@ -294,25 +295,6 @@ fill="#667085" />
 </svg>
 My Orders
 </a>
-{{-- <a href=""
-class="navbar-author-wrapper-list-item">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-xmlns="http://www.w3.org/2000/svg">
-<path
-d="M12 22.7503C11.37 22.7503 10.78 22.5104 10.34 22.0604L8.82001 20.5404C8.70001 20.4204 8.38 20.2904 8.22 20.2904H6.06C4.76 20.2904 3.70999 19.2403 3.70999 17.9403V15.7804C3.70999 15.6204 3.57999 15.3004 3.45999 15.1804L1.94 13.6604C1.5 13.2204 1.25 12.6303 1.25 12.0003C1.25 11.3703 1.49 10.7803 1.94 10.3403L3.45999 8.82028C3.57999 8.70028 3.70999 8.3803 3.70999 8.2203V6.06039C3.70999 4.76039 4.76 3.71029 6.06 3.71029H8.22C8.38 3.71029 8.70001 3.58029 8.82001 3.46029L10.34 1.94027C11.22 1.06027 12.78 1.06027 13.66 1.94027L15.18 3.46029C15.3 3.58029 15.62 3.71029 15.78 3.71029H17.94C19.24 3.71029 20.29 4.76039 20.29 6.06039V8.2203C20.29 8.3803 20.42 8.70028 20.54 8.82028L22.06 10.3403C22.5 10.7803 22.75 11.3703 22.75 12.0003C22.75 12.6303 22.51 13.2204 22.06 13.6604L20.54 15.1804C20.42 15.3004 20.29 15.6204 20.29 15.7804V17.9403C20.29 19.2403 19.24 20.2904 17.94 20.2904H15.78C15.62 20.2904 15.3 20.4204 15.18 20.5404L13.66 22.0604C13.22 22.5104 12.63 22.7503 12 22.7503ZM4.51999 14.1203C4.91999 14.5203 5.20999 15.2204 5.20999 15.7804V17.9403C5.20999 18.4103 5.59 18.7904 6.06 18.7904H8.22C8.78 18.7904 9.48001 19.0803 9.88 19.4803L11.4 21.0003C11.72 21.3203 12.28 21.3203 12.6 21.0003L14.12 19.4803C14.52 19.0803 15.22 18.7904 15.78 18.7904H17.94C18.41 18.7904 18.79 18.4103 18.79 17.9403V15.7804C18.79 15.2204 19.08 14.5203 19.48 14.1203L21 12.6003C21.16 12.4403 21.25 12.2303 21.25 12.0003C21.25 11.7703 21.16 11.5604 21 11.4004L19.48 9.88034C19.08 9.48034 18.79 8.7803 18.79 8.2203V6.06039C18.79 5.59039 18.41 5.21029 17.94 5.21029H15.78C15.22 5.21029 14.52 4.92035 14.12 4.52035L12.6 3.00033C12.28 2.68033 11.72 2.68033 11.4 3.00033L9.88 4.52035C9.48001 4.92035 8.78 5.21029 8.22 5.21029H6.06C5.59 5.21029 5.20999 5.59039 5.20999 6.06039V8.2203C5.20999 8.7803 4.91999 9.48034 4.51999 9.88034L3 11.4004C2.84 11.5604 2.75 11.7703 2.75 12.0003C2.75 12.2303 2.84 12.4403 3 12.6003L4.51999 14.1203Z"
-fill="#667085" />
-<path
-d="M15.0002 16C14.4402 16 13.9902 15.55 13.9902 15C13.9902 14.45 14.4402 14 14.9902 14C15.5402 14 15.9902 14.45 15.9902 15C15.9902 15.55 15.5502 16 15.0002 16Z"
-fill="#667085" />
-<path
-d="M9.01001 10C8.45001 10 8 9.55 8 9C8 8.45 8.45 8 9 8C9.55 8 10 8.45 10 9C10 9.55 9.56001 10 9.01001 10Z"
-fill="#667085" />
-<path
-d="M8.99994 15.7495C8.80994 15.7495 8.61994 15.6795 8.46994 15.5295C8.17994 15.2395 8.17994 14.7595 8.46994 14.4695L14.4699 8.46945C14.7599 8.17945 15.2399 8.17945 15.5299 8.46945C15.8199 8.75945 15.8199 9.23951 15.5299 9.52951L9.52994 15.5295C9.37994 15.6795 9.18994 15.7495 8.99994 15.7495Z"
-fill="#667085" />
-</svg>
-My Offers
-</a> --}}
 <a href="/flproposal"
 class="navbar-author-wrapper-list-item">
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -374,8 +356,8 @@ d="M15.21 22.1903C15 22.1903 14.79 22.1603 14.58 22.1103C13.96 21.9403 13.44 21.
 fill="#667085" />
 </svg>
 Profile Settings
-</a>
-<a href="/"
+</a> --}}
+<a href="/logout"
 class="navbar-author-wrapper-list-item">
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 xmlns="http://www.w3.org/2000/svg">
@@ -425,11 +407,12 @@ Log Out
         }
     </style>
 
-                            {{-- <div class="error-message"></div>
-                            <form class="login-wrapper-contents-form custom-form" id="user_auto_login_form" method="get" action="/clientlog">
+                            <div class="error-message"></div>
+                            <form class="login-wrapper-contents-form custom-form" id="user_auto_login_form" method="get" action="/login-user">
+                                @csrf
                                 <input type="hidden" name="_token" value="y2GKVXEiaQRTK7IiUYyPNyHl7KHcqfx9iaAYJlt3" autocomplete="off">                                <div class="single-input mt-4">
                                     <label class="label-title mb-3">Email Or User Name</label>
-                                    <input class="form--control" type="text" name="username" id="username" placeholder="Email Or User Name">
+                                    <input class="form--control" type="text" name="email_or_username" id="username" placeholder="Email Or User Name">
                                 </div>
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Password </label>
@@ -442,7 +425,7 @@ Log Out
                                     </div>
                                 </div>
                                 <button id="signin_form" class="submit-btn w-100 mt-4" type="submit"> Sign In Now </button>
-                                <span class="account color-light mt-3">Don&#039;t have an account? <a class="color-one" href=""> SignUp Now</a> </span>
+                                <span class="account color-light mt-3">Don&#039;t have an account? <a class="color-one" href="/register"> SignUp Now</a> </span>
                             </form>
                             <div class="single-checkbox mt-3">
                                 <div class="checkbox-inline">
@@ -450,12 +433,12 @@ Log Out
                                     <label class="checkbox-label" for="check15"> Remember Me </label>
                                 </div>
                                 <div class="forgot-password">
-                                    <a href="" class="forgot-btn color-one">Forgot Password </a>
+                                    {{-- <a href="" class="forgot-btn color-one">Forgot Password </a> --}}
                                 </div>
-                            </div> --}}
+                            </div>
 
                             
-                                                            <div class="mt-5">
+                                                            {{-- <div class="mt-5">
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -477,7 +460,7 @@ Log Out
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
                                                         
 
                                                             <div class="login-bottom-contents">
@@ -512,8 +495,8 @@ Log Out
                                                                     </div>
                             </div>
                             <div class="login-right-contents text-white">
-                                <h4 class="login-right-contents-title"> Xilancer Marketplace </h4>
-                                <p class="login-right-contents-para">Welcome, to xilancer marketplace. Here you can build a awesome career. Be a freelancer or you can post your job.</p>
+                                <h4 class="login-right-contents-title"> Edlance </h4>
+                                <p class="login-right-contents-para">Welcome, to Edlance. Here you can build a awesome career. Be a freelancer or you can post your job.</p>
                             </div>
                         </div>
                     </div>
@@ -670,7 +653,7 @@ Log Out
 <script src="https://xilancer.xgenious.com/assets/common/js/toastr.min.js"></script>
 <script type="text/javascript"></script>
 <!-- global ajax setup -->
-<script> $.ajaxSetup({headers: {'X-CSRF-TOKEN': 'y2GKVXEiaQRTK7IiUYyPNyHl7KHcqfx9iaAYJlt3'} }) </script>
+{{-- <script> $.ajaxSetup({headers: {'X-CSRF-TOKEN': 'y2GKVXEiaQRTK7IiUYyPNyHl7KHcqfx9iaAYJlt3'} }) </script> --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
@@ -678,6 +661,13 @@ Log Out
     (function($){
         "use strict";
         $(document).ready(function(){
+
+            $.ajaxSetup({
+                    headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                             }
+            });
+
             $(document).on('mouseup', function (e) {
                 if ($(e.target).closest('.navbar-right-notification').find('.navbar-right-notification-wrapper').length === 0) {
                     $('.navbar-right-notification-wrapper').removeClass('active');
@@ -687,7 +677,7 @@ Log Out
             $(document).on('click', '.navbar-right-notification-icon', function () {
                 $('.navbar-right-notification-wrapper').toggleClass('active');
                                 $.ajax({
-                    url:"https://xilancer.xgenious.com/client/notification/read",
+                    url:"/client/notification/read",
                     method:'POST',
                     success: function(res){
                         if(res.status == 'success'){
@@ -703,7 +693,7 @@ Log Out
                 let erContainer = $("#newsletter_subscribe_from_addon .error-message");
                 erContainer.html('');
                 $.ajax({
-                    url:"https://xilancer.xgenious.com/news-letter/subscribe/by/user",
+                    url:"/news-letter/subscribe/by/user",
                     data:{email:email},
                     method:'POST',
                     error:function(res){
@@ -731,7 +721,7 @@ Log Out
                 let erContainer = $("#newsletter_subscribe_from_footer .error-message");
                 erContainer.html('');
                 $.ajax({
-                    url:"https://xilancer.xgenious.com/news-letter/subscribe/by/user",
+                    url:"/news-letter/subscribe/by/user",
                     data:{email:email},
                     method:'POST',
                     error:function(res){
@@ -761,7 +751,7 @@ Log Out
                 let erContainer = $("#ask_your_question .error-message");
                 erContainer.html('');
                 $.ajax({
-                    url:"https://xilancer.xgenious.com/faq/question/by/user",
+                    url:"/faq/question/by/user",
                     data:{question:question},
                     method:'POST',
                     error:function(res){
@@ -844,7 +834,7 @@ Log Out
                     $('.display_search_result').show()
                     $('#header_search_load_spinner').html('<i class="fas fa-spinner fa-pulse"></i>');
                     $.ajax({
-                        url:"https://xilancer.xgenious.com/job/project/search/from/home/page",
+                        url:"/job/project/search/from/home/page",
                         method:"GET",
                         data:{job_search_string:job_search_string, search_type},
                         success:function(res){
@@ -1067,10 +1057,10 @@ Log Out
                     erContainer.html('');
                     el.text('Please Wait..');
                     $.ajax({
-                        url: "https://xilancer.xgenious.com/login",
+                        url: "/login-user",
                         type: "POST",
                         data: {
-                            username : $('#username').val(),
+                            email_or_username : $('#username').val(),
                             password : $('#password').val(),
                             remember : $('#remember').val(),
                         },
@@ -1085,18 +1075,18 @@ Log Out
                         success:function (data){
                             console.log(data);
                             $('.alert.alert-danger').remove();
-                            if (data.status == 'client-login'){
+                            if (data == 'client-login'){
                                 el.text('Redirecting..');
                                 erContainer.html('<div class="alert alert-'+data.type+'">'+data.msg+'</div>');
-                                let redirectPath = "https://xilancer.xgenious.com/client/dashboard/info";
+                                let redirectPath = "/clientlog";
                                                                     window.location = redirectPath;
-                            }else if (data.status == 'freelancer-login'){
+                            }else if (data == 'freelancer-login'){
                                 el.text('Redirecting..');
                                 erContainer.html('<div class="alert alert-'+data.type+'">'+data.msg+'</div>');
-                                let redirectPath = "https://xilancer.xgenious.com/freelancer/dashboard/info";
+                                let redirectPath = "/freelancelog";
 
                                 
-                                    window.location = redirectPath;
+                                    window.location.href = redirectPath;
                             }
                             else{
                                 erContainer.html('<div class="alert alert-'+data.type+'">'+data.msg+'</div>');
